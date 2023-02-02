@@ -1,12 +1,18 @@
 import React from 'react'
-import Menu from '../../components/Menu/Menu'
+import BasicLayout from '../../components/BasicLayout/BasicLayout'
+import Counter from '../../components/Counter'
+import Map from '../../components/Map/Map'
+
+import './Home.css'
 
 function Home() {
   return (
-    <div>
-      <Menu />
-      <h1>Home</h1>
-    </div>
+    <BasicLayout>
+      <section className="Home">
+        <Map />
+        <Counter targetDate={'2023-05-23'} />
+      </section>
+    </BasicLayout>
   )
 }
 

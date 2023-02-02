@@ -27,7 +27,7 @@ export async function signInWithEmailAndPasswordService(email, password) {
     const { user } = await signInWithEmailAndPassword(auth, email, password)
     return user
   } catch (error) {
-    throw new Error(error)
+    throw new Error(error.code)
   }
 }
 

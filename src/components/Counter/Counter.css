@@ -1,0 +1,28 @@
+.Counter{
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+.Counter__item{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding: .5rem;
+    font-size: 2rem;
+    position: relative;
+    font-weight: bold;
+}
+.Counter__item::after{
+    content: ':';
+    position: absolute;
+    right: -5px;
+}
+.Counter__item:last-child:after{
+    display: none;
+}
+
+.Counter__type{
+    font-size: .5rem;
+    font-weight: normal;
+}

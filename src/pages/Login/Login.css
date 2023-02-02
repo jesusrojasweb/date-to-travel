@@ -1,0 +1,37 @@
+.Form {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    box-sizing: border-box;
+}
+
+.Form__input{
+    padding: .5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid black;
+}
+
+.Form__input:focus-visible{
+    border-color: var(--blue);
+    outline: none;
+}
+
+.Form__button {
+    padding: .8rem 1rem;
+    border-radius: 8px;
+    border: none;
+    background-color: black;
+    color: white
+}
+
+.Form__error{
+    color: red;
+    margin: 0;
+}
+
+.Form__reset {
+    color: var(--blue);;
+}
