@@ -1,0 +1,22 @@
+.FapTime {
+    background-color: var(--green);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.FapTime__title {
+    margin: 0
+}
+
+.FapTime__name {
+    margin: 1rem 0 0;
+    font-weight: normal;
+}
+
+.FapTime__fap {
+    font-size: 2rem;
+}

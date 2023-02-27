@@ -1,7 +1,11 @@
 :root {
   --blue: #3148eb;
+  --blue-light: #00daf7;
   --purble: #a9b2f1;
-  --bg-gray: #f8f8f8
+  --bg-gray: #f8f8f8;
+  --bg-dark: #141925;
+  --green: #e1f0f4;
+  --pink: #ffeeee;
 }
 
 body {
@@ -15,4 +19,21 @@ body {
 
 .Toastify__toast-container{
   padding: 1rem !important;
+  
+}
+.chakra-modal__overlay {
+  background-color: rgb(0 0 0 / 50%);
+}
+.chakra-modal__content-container{
+  height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.chakra-modal__content{
+  background: white;
+  margin: 0 1rem;
+  border-radius: 1rem;
+  padding: 1rem;
 }

@@ -1,0 +1,46 @@
+.Menu{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.Menu__container {
+    display: flex;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 1rem;
+    justify-content: space-around;
+    list-style: none;
+    background: var(--bg-dark);
+    border-radius: 3rem;
+    padding: 1rem;
+    position: relative;
+}
+
+.Menu__item {
+    position: relative;
+    display: flex;
+    justify-content: center;
+}
+
+.Menu__link {
+    color: white;
+    font-size: 1.5rem;
+}
+
+.Menu__button {
+    background: var(--blue-light);
+    position: absolute;
+    font-size: 2rem;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 5rem;
+    height: 5rem;
+    top: -3rem;
+    border: 0.5rem solid black;
+}

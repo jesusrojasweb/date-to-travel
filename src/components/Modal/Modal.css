@@ -1,0 +1,11 @@
+.Modal{
+    background-color: white;
+}
+
+.Modal__button {
+    border: none;
+    background-color: var(--bg-dark);
+    color: white;
+    border-radius: 8px;
+    padding: .5rem 1rem;
+}

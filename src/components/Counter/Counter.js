@@ -15,8 +15,13 @@ const Counter = ({ targetDate }) => {
       const date = new Date(targetDate)
       const timeLeft = date.getTime() - currentTime
 
-      setMonths(Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30)))
-      setDays(Math.floor(timeLeft / (1000 * 60 * 60 * 24)))
+      const newMonths = Math.floor(timeLeft / (1000 * 60 * 60 * 24 * 30))
+
+      const newDays =
+        Math.floor(timeLeft / (1000 * 60 * 60 * 24)) - newMonths * 30
+
+      setMonths(newMonths)
+      setDays(newDays)
       setHours(
         Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
       )
@@ -37,7 +42,7 @@ const Counter = ({ targetDate }) => {
         {months} <span className="Counter__type">Meses</span>
       </div>
       <div className="Counter__item">
-        {days} <span className="Counter__type">Días</span>
+        {padWithZero(days)} <span className="Counter__type">Días</span>
       </div>
       <div className="Counter__item">
         {padWithZero(hours)} <span className="Counter__type">Horas</span>

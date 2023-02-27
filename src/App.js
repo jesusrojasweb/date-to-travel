@@ -1,35 +1,27 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import {
   BrowserRouter as Router,
   Navigate,
   Route,
   Routes
 } from 'react-router-dom'
-import BasicLayout from './components/BasicLayout/BasicLayout'
 import ForgotPassword from './pages/ForgotPassword/ForgotPassword'
 import { ToastContainer } from 'react-toastify'
 
 import Home from './pages/Home'
 import Login from './pages/Login/'
 import Register from './pages/Register/'
-import { auth } from './utilities/firebase.utility'
+import Chat from './pages/Chat/'
 import Profile from './pages/Profile/Profile'
+import UserWrapper from './context/UserWrapper'
+import { useAuth } from './hooks/useAuth'
+import Singleton from './pages/Singleton'
 
 function App() {
-  const [isAuth, setIsAuth] = useState(false)
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged((user) => {
-      if (user) {
-        setIsAuth(true)
-      } else {
-        setIsAuth(false)
-      }
-    })
-    return () => unsubscribe()
-  }, [])
+  const { isAuth } = useAuth()
 
   return (
-    <>
+    <UserWrapper>
       <ToastContainer />
       <Router>
         <Routes>
@@ -40,6 +32,11 @@ function App() {
           <Route
             path="/profile"
             element={isAuth ? <Profile /> : <Navigate to="/login" />}
+          />
+          <Route path="/singleton" element={<Singleton />} />
+          <Route
+            path="/chat"
+            element={isAuth ? <Chat /> : <Navigate to="/login" />}
           />
           <Route
             path="/login"
@@ -55,7 +52,7 @@ function App() {
           />
         </Routes>
       </Router>
-    </>
+    </UserWrapper>
   )
 }
 
